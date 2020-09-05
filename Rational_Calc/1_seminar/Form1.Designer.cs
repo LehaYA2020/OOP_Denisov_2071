@@ -59,6 +59,7 @@
             this.bttnSubtraction.TabIndex = 1;
             this.bttnSubtraction.Text = "-";
             this.bttnSubtraction.UseVisualStyleBackColor = true;
+            this.bttnSubtraction.Click += new System.EventHandler(this.bttnSubtraction_Click);
             // 
             // bttnMult
             // 
@@ -68,6 +69,7 @@
             this.bttnMult.TabIndex = 2;
             this.bttnMult.Text = "*";
             this.bttnMult.UseVisualStyleBackColor = true;
+            this.bttnMult.Click += new System.EventHandler(this.bttnMult_Click);
             // 
             // bttnDiv
             // 
@@ -77,6 +79,7 @@
             this.bttnDiv.TabIndex = 3;
             this.bttnDiv.Text = "/";
             this.bttnDiv.UseVisualStyleBackColor = true;
+            this.bttnDiv.Click += new System.EventHandler(this.bttnDiv_Click);
             // 
             // textBox1
             // 

@@ -30,5 +30,44 @@ namespace _1_seminar
             textBox5.Text = Convert.ToString(z.numerator);
             textBox6.Text = Convert.ToString(z.denumerator);
         }
+
+        private void bttnSubtraction_Click(object sender, EventArgs e)
+        {
+            int Chisl_1 = Convert.ToInt32(textBox1.Text);
+            int Znam_1 = Convert.ToInt32(textBox2.Text);
+            int Chisl_2 = Convert.ToInt32(textBox3.Text);
+            int Znam_2 = Convert.ToInt32(textBox4.Text);
+            Rational x = new Rational(Chisl_1, Znam_1);
+            Rational y = new Rational(Chisl_2, Znam_2);
+            Rational z = x.Subtraction(y);
+            textBox5.Text = Convert.ToString(z.numerator);
+            textBox6.Text = Convert.ToString(z.denumerator);
+        }
+
+        private void bttnMult_Click(object sender, EventArgs e)
+        {
+            int Chisl_1 = Convert.ToInt32(textBox1.Text);
+            int Znam_1 = Convert.ToInt32(textBox2.Text);
+            int Chisl_2 = Convert.ToInt32(textBox3.Text);
+            int Znam_2 = Convert.ToInt32(textBox4.Text);
+            Rational x = new Rational(Chisl_1, Znam_1);
+            Rational y = new Rational(Chisl_2, Znam_2);
+            Rational z = x.Mulryplier(y);
+            textBox5.Text = Convert.ToString(z.numerator);
+            textBox6.Text = Convert.ToString(z.denumerator);
+        }
+
+        private void bttnDiv_Click(object sender, EventArgs e)
+        {
+            int Chisl_1 = Convert.ToInt32(textBox1.Text);
+            int Znam_1 = Convert.ToInt32(textBox2.Text);
+            int Chisl_2 = Convert.ToInt32(textBox3.Text);
+            int Znam_2 = Convert.ToInt32(textBox4.Text);
+            Rational x = new Rational(Chisl_1, Znam_1);
+            Rational y = new Rational(Chisl_2, Znam_2);
+            Rational z = x.Division(y);
+            textBox5.Text = Convert.ToString(z.numerator);
+            textBox6.Text = Convert.ToString(z.denumerator);
+        }
     }
 }

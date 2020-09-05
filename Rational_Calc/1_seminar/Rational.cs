@@ -15,20 +15,53 @@ namespace _1_seminar
             this.numerator = numerator;
             this.denumerator = denumerator;
         }
-         public Rational Sum(Rational those)
+        public Rational Sum(Rational those)
         {
-            Rational result=new Rational(those.numerator,those.denumerator);
+            Rational result = new Rational(those.numerator, those.denumerator);
             if (this.denumerator == those.denumerator)
             {
                 result.numerator = this.numerator + those.numerator;
                 result.denumerator = this.denumerator;
             }
-            if(this.denumerator != those.denumerator)
+            if (this.denumerator != those.denumerator)
             {
-                result.numerator = this.numerator*those.denumerator + those.numerator * this.denumerator;
-                result.denumerator = this.denumerator*those.denumerator;
+                result.numerator = this.numerator * those.denumerator + those.numerator * this.denumerator;
+                result.denumerator = this.denumerator * those.denumerator;
             }
             return result;
-        } 
+        }
+        public Rational Subtraction(Rational those)
+        {
+            Rational result = new Rational(those.numerator, those.denumerator);
+            if (this.denumerator == those.denumerator)
+            {
+                result.numerator = this.numerator - those.numerator;
+                result.denumerator = this.denumerator;
+            }
+            if (this.denumerator != those.denumerator)
+            {
+                result.numerator = this.numerator * those.denumerator - those.numerator * this.denumerator;
+                result.denumerator = this.denumerator * those.denumerator;
+            }
+            return result;
+        }
+        public Rational Mulryplier(Rational those)
+        {
+            Rational result = new Rational(those.numerator, those.denumerator);
+
+            result.numerator = this.numerator * those.numerator;
+            result.denumerator = this.denumerator * those.denumerator;
+
+            return result;
+        }
+        public Rational Division(Rational those)
+        {
+            Rational result = new Rational(those.numerator, those.denumerator);
+
+            result.numerator = this.numerator / those.numerator;
+            result.denumerator = this.denumerator / those.denumerator;
+
+            return result;
+        }
     }
 }
