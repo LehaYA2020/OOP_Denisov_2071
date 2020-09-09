@@ -45,7 +45,7 @@ namespace _1_seminar
             }
             return result;
         }
-        public Rational Mulryplier(Rational those)
+        public Rational Multyply(Rational those)
         {
             Rational result = new Rational(those.numerator, those.denumerator);
 
@@ -62,6 +62,26 @@ namespace _1_seminar
             result.denumerator = this.denumerator / those.denumerator;
 
             return result;
+        }
+        public static Rational operator +(Rational x,Rational y)
+        {
+
+            return x.Sum(y);
+        }
+        public static Rational operator -(Rational x, Rational y)
+        {
+
+            return x.Subtraction(y);
+        }
+        public static Rational operator *(Rational x, Rational y)
+        {
+
+            return x.Multyply(y);
+        }
+        public static Rational operator /(Rational x, Rational y)
+        {
+
+            return x.Division(y);
         }
     }
 }

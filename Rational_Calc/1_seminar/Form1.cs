@@ -26,7 +26,8 @@ namespace _1_seminar
             int Znam_2 = Convert.ToInt32(textBox4.Text);
             Rational x = new Rational(Chisl_1,Znam_1);
             Rational y = new Rational(Chisl_2, Znam_2);
-            Rational z = x.Sum(y);
+            Rational z = x+y ;
+
             textBox5.Text = Convert.ToString(z.numerator);
             textBox6.Text = Convert.ToString(z.denumerator);
         }
@@ -39,7 +40,7 @@ namespace _1_seminar
             int Znam_2 = Convert.ToInt32(textBox4.Text);
             Rational x = new Rational(Chisl_1, Znam_1);
             Rational y = new Rational(Chisl_2, Znam_2);
-            Rational z = x.Subtraction(y);
+            Rational z = x-y;
             textBox5.Text = Convert.ToString(z.numerator);
             textBox6.Text = Convert.ToString(z.denumerator);
         }
@@ -52,7 +53,7 @@ namespace _1_seminar
             int Znam_2 = Convert.ToInt32(textBox4.Text);
             Rational x = new Rational(Chisl_1, Znam_1);
             Rational y = new Rational(Chisl_2, Znam_2);
-            Rational z = x.Mulryplier(y);
+            Rational z = x*y;
             textBox5.Text = Convert.ToString(z.numerator);
             textBox6.Text = Convert.ToString(z.denumerator);
         }
@@ -65,7 +66,7 @@ namespace _1_seminar
             int Znam_2 = Convert.ToInt32(textBox4.Text);
             Rational x = new Rational(Chisl_1, Znam_1);
             Rational y = new Rational(Chisl_2, Znam_2);
-            Rational z = x.Division(y);
+            Rational z = x*y;
             textBox5.Text = Convert.ToString(z.numerator);
             textBox6.Text = Convert.ToString(z.denumerator);
         }
