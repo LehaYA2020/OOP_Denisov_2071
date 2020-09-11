@@ -37,8 +37,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.bttnClean = new System.Windows.Forms.Button();
+            this.bttnEquality = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bttnSum
@@ -111,17 +112,10 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(138, 12);
+            this.textBox5.Location = new System.Drawing.Point(138, 26);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(28, 20);
+            this.textBox5.Size = new System.Drawing.Size(48, 20);
             this.textBox5.TabIndex = 8;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(138, 38);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(28, 20);
-            this.textBox6.TabIndex = 9;
             // 
             // label1
             // 
@@ -132,13 +126,34 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "=";
             // 
+            // bttnClean
+            // 
+            this.bttnClean.Location = new System.Drawing.Point(57, 169);
+            this.bttnClean.Name = "bttnClean";
+            this.bttnClean.Size = new System.Drawing.Size(75, 23);
+            this.bttnClean.TabIndex = 11;
+            this.bttnClean.Text = "Clean";
+            this.bttnClean.UseVisualStyleBackColor = true;
+            this.bttnClean.Click += new System.EventHandler(this.bttnClean_Click);
+            // 
+            // bttnEquality
+            // 
+            this.bttnEquality.Location = new System.Drawing.Point(57, 140);
+            this.bttnEquality.Name = "bttnEquality";
+            this.bttnEquality.Size = new System.Drawing.Size(75, 23);
+            this.bttnEquality.TabIndex = 12;
+            this.bttnEquality.Text = "=";
+            this.bttnEquality.UseVisualStyleBackColor = true;
+            this.bttnEquality.Click += new System.EventHandler(this.bttnEquality_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(189, 188);
+            this.ClientSize = new System.Drawing.Size(190, 202);
+            this.Controls.Add(this.bttnEquality);
+            this.Controls.Add(this.bttnClean);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -166,8 +181,9 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button bttnClean;
+        private System.Windows.Forms.Button bttnEquality;
     }
 }
 
