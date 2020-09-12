@@ -47,7 +47,7 @@ namespace _1_seminar
             }
             return Reduction(result);
         }
-        public Rational Multyply(Rational those)
+        public Rational Multiply(Rational those)
         {
             Rational result = new Rational(those.numerator, those.denumerator);
 
@@ -88,7 +88,7 @@ namespace _1_seminar
         public static Rational operator *(Rational x, Rational y)
         {
 
-            return x.Multyply(y);
+            return x.Multiply(y);
         }
         public static Rational operator /(Rational x, Rational y)
         {

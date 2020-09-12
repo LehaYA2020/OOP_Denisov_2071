@@ -12,8 +12,8 @@ namespace _1_seminar
 {
     public partial class Form1 : Form
     {
-        private string tool;
-        public int Chisl_1 ;
+        private string operation;
+        public int Chisl_1;
         public int Znam_1;
         public int Chisl_2;
         public int Znam_2;
@@ -24,39 +24,23 @@ namespace _1_seminar
 
         private void bttnSum_Click(object sender, EventArgs e)
         {
-            Chisl_1 = Convert.ToInt32(textBox1.Text);
-            Znam_1 = Convert.ToInt32(textBox2.Text);
-            Chisl_2 = Convert.ToInt32(textBox3.Text);
-            Znam_2 = Convert.ToInt32(textBox4.Text);
-            tool = "+";
+            operation = "+";
         }
 
         private void bttnSubtraction_Click(object sender, EventArgs e)
         {
-            Chisl_1 = Convert.ToInt32(textBox1.Text);
-            Znam_1 = Convert.ToInt32(textBox2.Text);
-            Chisl_2 = Convert.ToInt32(textBox3.Text);
-            Znam_2 = Convert.ToInt32(textBox4.Text);
-            tool = "-";
+            operation = "-";
         }
 
         private void bttnMult_Click(object sender, EventArgs e)
         {
-            Chisl_1 = Convert.ToInt32(textBox1.Text);
-            Znam_1 = Convert.ToInt32(textBox2.Text);
-            Chisl_2 = Convert.ToInt32(textBox3.Text);
-            Znam_2 = Convert.ToInt32(textBox4.Text);
-            tool = "*";
-            
+            operation = "*";
+
         }
 
         private void bttnDiv_Click(object sender, EventArgs e)
         {
-            Chisl_1 = Convert.ToInt32(textBox1.Text);
-            Znam_1 = Convert.ToInt32(textBox2.Text);
-            Chisl_2 = Convert.ToInt32(textBox3.Text);
-            Znam_2 = Convert.ToInt32(textBox4.Text);
-            tool = "/";
+            operation = "/";
         }
 
         private void bttnClean_Click(object sender, EventArgs e)
@@ -70,65 +54,48 @@ namespace _1_seminar
 
         private void bttnEquality_Click(object sender, EventArgs e)
         {
-            switch (tool)
+            if (int.TryParse(textBox1.Text, out Chisl_1) && int.TryParse(textBox2.Text, out Znam_1) && int.TryParse(textBox3.Text, out Chisl_2) && int.TryParse(textBox4.Text, out Znam_2))
             {
-                case "+":
-                    if (int.TryParse(textBox1.Text, out Chisl_1) && int.TryParse(textBox2.Text, out Znam_1) && int.TryParse(textBox3.Text, out Chisl_2) && int.TryParse(textBox4.Text, out Znam_2))
-                    {
-                        Rational x = new Rational(Chisl_1, Znam_1);
-                        Rational y = new Rational(Chisl_2, Znam_2);
+                Rational x = new Rational(Chisl_1, Znam_1);
+                Rational y = new Rational(Chisl_2, Znam_2);
+                switch (operation)
+                {
+                    case "+":
                         if (x.denumerator != 0 && y.denumerator != 0)
                         {
                             Rational z = x + y;
                             textBox5.Text = z.FracToString(z);
                         }
                         else { MessageBox.Show("Один из ваших знаменателей равен 0, исправьте!"); }
-                    }
-                    else { MessageBox.Show("Проверьте введенные данные"); }
-                    break;
-                case "-":
-                    if (int.TryParse(textBox1.Text, out Chisl_1) && int.TryParse(textBox2.Text, out Znam_1) && int.TryParse(textBox3.Text, out Chisl_2) && int.TryParse(textBox4.Text, out Znam_2))
-                    {
-                        Rational x = new Rational(Chisl_1, Znam_1);
-                        Rational y = new Rational(Chisl_2, Znam_2);
+                        break;
+                    case "-":
                         if (x.denumerator != 0 && y.denumerator != 0)
                         {
                             Rational z = x - y;
                             textBox5.Text = z.FracToString(z);
                         }
                         else { MessageBox.Show("Один из ваших знаменателей равен 0, исправьте!"); }
-                    }
-                    else { MessageBox.Show("Проверьте введенные данные"); }
-                    break;
-                case "*":
-                    if (int.TryParse(textBox1.Text, out Chisl_1) && int.TryParse(textBox2.Text, out Znam_1) && int.TryParse(textBox3.Text, out Chisl_2) && int.TryParse(textBox4.Text, out Znam_2))
-                    {
-                        Rational x = new Rational(Chisl_1, Znam_1);
-                        Rational y = new Rational(Chisl_2, Znam_2);
+                        break;
+                    case "*":
+
                         if (x.denumerator != 0 && y.denumerator != 0)
                         {
                             Rational z = x * y;
                             textBox5.Text = z.FracToString(z);
                         }
                         else { MessageBox.Show("Деление на 0 невозможно - проверьте введенные данные"); }
-                    }
-                    else { MessageBox.Show("Проверьте введенные данные"); }
-                    break;
-                case "/":
-                    if (int.TryParse(textBox1.Text, out Chisl_1) && int.TryParse(textBox2.Text, out Znam_1) && int.TryParse(textBox3.Text, out Chisl_2) && int.TryParse(textBox4.Text, out Znam_2))
-                    {
-                        Rational x = new Rational(Chisl_1, Znam_1);
-                        Rational y = new Rational(Chisl_2, Znam_2);
+                        break;
+                    case "/":
                         if (x.denumerator != 0 && y.numerator != 0 && y.denumerator != 0)
                         {
                             Rational z = x / y;
                             textBox5.Text = z.FracToString(z);
                         }
                         else { MessageBox.Show("Деление на 0 невозможно - проверьте введенные данные"); }
-                    }
-                    else { MessageBox.Show("Проверьте введенные данные"); }
-                    break;
+                        break;
+                }
             }
+            else { MessageBox.Show("Проверьте введенные данные"); }
         }
     }
 }
