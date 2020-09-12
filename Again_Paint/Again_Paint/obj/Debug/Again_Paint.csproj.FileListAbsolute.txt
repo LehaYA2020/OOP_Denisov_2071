@@ -1,0 +1,10 @@
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\bin\Debug\Again_Paint.exe.config
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\bin\Debug\Again_Paint.exe
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\bin\Debug\Again_Paint.pdb
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csprojResolveAssemblyReference.cache
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.Paint.resources
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.Properties.Resources.resources
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csproj.GenerateResource.Cache
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csproj.CoreCompileInputs.cache
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.exe
+C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.pdb
