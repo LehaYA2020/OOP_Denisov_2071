@@ -1,0 +1,9 @@
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\bin\Debug\1_seminar.exe.config
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\bin\Debug\1_seminar.exe
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\bin\Debug\1_seminar.pdb
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\obj\Debug\1_seminar.csprojAssemblyReference.cache
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\obj\Debug\_1_seminar.Form1.resources
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\obj\Debug\_1_seminar.Properties.Resources.resources
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\obj\Debug\1_seminar.csproj.GenerateResource.cache
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\obj\Debug\1_seminar.exe
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Rational_Calc\1_seminar\obj\Debug\1_seminar.pdb
