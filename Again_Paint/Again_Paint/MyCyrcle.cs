@@ -11,7 +11,7 @@ namespace Again_Paint
     {
         public override void Draw(int x, int y, Graphics G)
         {
-            G.DrawEllipse(new Pen(new SolidBrush(Color.Black), 1), x - Width / 2, y - Width / 2, Width, Width);
+            G.DrawEllipse(new Pen(new SolidBrush(Clr), 3), x - Width / 2, y - Width / 2, Width, Width);
         }
     }
 }

@@ -8,3 +8,12 @@ C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.cspr
 C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csproj.CoreCompileInputs.cache
 C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.exe
 C:\Users\DeAA.19\source\repos\Again_Paint\Again_Paint\obj\Debug\Again_Paint.pdb
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\bin\Debug\Again_Paint.exe.config
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\bin\Debug\Again_Paint.exe
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\bin\Debug\Again_Paint.pdb
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csprojAssemblyReference.cache
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.Paint.resources
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.Properties.Resources.resources
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csproj.GenerateResource.cache
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.exe
+C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.pdb

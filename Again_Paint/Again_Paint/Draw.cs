@@ -9,8 +9,9 @@ namespace Again_Paint
 {
     class Drawer
     {
-        private int width = 50;
-        private Color color;
+        private int width=2;
+        private int height=2;
+        private Color color= Color.Black;
         public int Width
         {
             get
@@ -26,9 +27,15 @@ namespace Again_Paint
                 else { throw new Exception("Диапазон ширины от 0 до 500"); }
             }
         }
+        public int Height { get { return height; } set { if (value > 1 && value <= 10) { height = value; } } }
+        public Color Clr
+        {
+            get { return color; }
+            set { color = value; }
+        }
         public virtual void Draw(int x, int y, Graphics G)
         {
-            G.FillRectangle(Brushes.Black, x, y, width, width);
+            G.FillRectangle(new SolidBrush(color), x, y, width, width);
         }
     }
 }

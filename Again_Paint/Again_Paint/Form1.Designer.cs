@@ -32,7 +32,10 @@
             this.Circle = new System.Windows.Forms.Button();
             this.Rectangle = new System.Windows.Forms.Button();
             this.bttnClean = new System.Windows.Forms.Button();
+            this.WidthValue = new System.Windows.Forms.NumericUpDown();
+            this.button_Color = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -63,6 +66,7 @@
             this.Rectangle.TabIndex = 2;
             this.Rectangle.Text = "Квадрат";
             this.Rectangle.UseVisualStyleBackColor = true;
+            this.Rectangle.Click += new System.EventHandler(this.Rectangle_Click);
             // 
             // bttnClean
             // 
@@ -74,11 +78,41 @@
             this.bttnClean.UseVisualStyleBackColor = true;
             this.bttnClean.Click += new System.EventHandler(this.bttnClean_Click);
             // 
+            // WidthValue
+            // 
+            this.WidthValue.Location = new System.Drawing.Point(55, 408);
+            this.WidthValue.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.WidthValue.Name = "WidthValue";
+            this.WidthValue.Size = new System.Drawing.Size(45, 20);
+            this.WidthValue.TabIndex = 4;
+            this.WidthValue.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.WidthValue.ValueChanged += new System.EventHandler(this.WidthValue_ValueChanged);
+            // 
+            // button_Color
+            // 
+            this.button_Color.BackColor = System.Drawing.SystemColors.ControlText;
+            this.button_Color.Location = new System.Drawing.Point(43, 434);
+            this.button_Color.Name = "button_Color";
+            this.button_Color.Size = new System.Drawing.Size(75, 23);
+            this.button_Color.TabIndex = 5;
+            this.button_Color.UseVisualStyleBackColor = false;
+            this.button_Color.Click += new System.EventHandler(this.button_Color_Click);
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 469);
+            this.Controls.Add(this.button_Color);
+            this.Controls.Add(this.WidthValue);
             this.Controls.Add(this.bttnClean);
             this.Controls.Add(this.Rectangle);
             this.Controls.Add(this.Circle);
@@ -87,6 +121,7 @@
             this.Text = "Paint";
             this.Load += new System.EventHandler(this.Paint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,6 +132,8 @@
         private System.Windows.Forms.Button Circle;
         private System.Windows.Forms.Button Rectangle;
         private System.Windows.Forms.Button bttnClean;
+        private System.Windows.Forms.NumericUpDown WidthValue;
+        private System.Windows.Forms.Button button_Color;
     }
 }
 

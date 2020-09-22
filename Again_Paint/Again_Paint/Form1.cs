@@ -44,5 +44,23 @@ namespace Again_Paint
         {
             G.Clear(pictureBox1.BackColor);
         }
+
+        private void WidthValue_ValueChanged(object sender, EventArgs e)
+        {
+            draw.Width = (int)WidthValue.Value;
+        }
+
+        private void Rectangle_Click(object sender, EventArgs e)
+        {
+            draw = new MyRectangle();
+        }
+
+        private void button_Color_Click(object sender, EventArgs e)
+        {
+            ColorDialog tmpDialog = new ColorDialog();
+            tmpDialog.ShowDialog();
+            button_Color.BackColor = tmpDialog.Color;
+            draw.Clr = tmpDialog.Color;
+        }
     }
 }
