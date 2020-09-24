@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Again_Paint
 {
@@ -18,7 +15,7 @@ namespace Again_Paint
         private int y = 0;
         private bool inside = false;
 
-        public int Radious
+        public override int Radious
         {
             get
             {
@@ -29,7 +26,7 @@ namespace Again_Paint
                 radious = value;
             }
         }
-        public int X
+        public override int X
         {
             get
             {
@@ -40,7 +37,7 @@ namespace Again_Paint
                 x = value;
             }
         }
-        public int Y
+        public override int Y
         {
             get
             {
@@ -51,7 +48,7 @@ namespace Again_Paint
                 y = value;
             }
         }
-        public Color Clr
+        public override Color Clr
         {
             get { return color; }
             set { color = value; }
@@ -65,9 +62,13 @@ namespace Again_Paint
         }
 
 
-        public override void Draw(int x, int y, Graphics G)
+        public override void Draw(Graphics G)
         {
             G.DrawEllipse(new Pen(new SolidBrush(Clr), 3), x - Radious / 2, y - Radious / 2, Radious, Radious);
+        }
+
+        public override void Move(int x, int y)
+        {
         }
         public override bool IsPointInside(int x, int y)
         {

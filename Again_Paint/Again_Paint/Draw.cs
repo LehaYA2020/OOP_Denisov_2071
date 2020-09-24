@@ -9,12 +9,17 @@ namespace Again_Paint
 {
     class Drawer
     {
-        public virtual void Draw(int x, int y, Graphics G)
+        public virtual int Width{ get; set; }
+        public virtual int Height { get; set; }
+        public virtual int Radious { get; set; }
+        public virtual int X { get; set; }
+        public virtual int Y { get; set; }
+        public virtual Color Clr { get; set; }
+        public virtual void Draw(Graphics G)
         {
         }
         public virtual void Move(int x, int y)
         {
-
         }
         public virtual bool IsPointInside(int x, int y)
         {

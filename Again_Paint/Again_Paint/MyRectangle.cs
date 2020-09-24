@@ -16,16 +16,41 @@ namespace Again_Paint
         private int startX = 0;
 
         private int startY = 0;
+
         private bool inside = false;
 
         private Color color = Color.Black;
-        public Color Clr
+
+        public virtual Color Clr
         {
             get { return color; }
             set { color = value; }
         }
+        public override int X
+        {
+            get
+            {
+                return startX;
+            }
+            set
+            {
+                startX = value;
+            }
+        }
 
-        public int Width
+        public override int Y
+        {
+            get
+            {
+                return startY;
+            }
+            set
+            {
+                startY = value;
+            }
+        }
+
+        public override int Width
         {
             get
             {
@@ -49,12 +74,13 @@ namespace Again_Paint
             this.height = height;
         }
 
-        public int Height { get { return height; } set { if (value > 1 && value <= 500) { height = value; } } }
+        public override int Height { get { return height; } set { if (value > 1 && value <= 500) { height = value; } } }
 
-        public override void Draw(int x, int y, Graphics G)
+        public override void Draw(Graphics G)
         {
-            G.DrawRectangle(new Pen(new SolidBrush(Clr), 2), x - Width / 2, y - Width / 2, Width, Height);
+            G.DrawRectangle(new Pen(new SolidBrush(Clr), 2), startX - Width / 2, startY - Width / 2, Width, Height);
         }
+
         public override bool IsPointInside(int x, int y)
         {
             if ((x > this.startX - Width / 2) && (x < this.startX + Width / 2) && (y > this.startY - Height / 2) && (y < this.startY + Height / 2))

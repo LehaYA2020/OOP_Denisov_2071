@@ -39,10 +39,19 @@
             this.bttnPaint = new System.Windows.Forms.Button();
             this.coordinatesX = new System.Windows.Forms.TextBox();
             this.coordinatesY = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelRec = new System.Windows.Forms.Panel();
+            this.panelCir = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeightValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadiusValue)).BeginInit();
+            this.panelRec.SuspendLayout();
+            this.panelCir.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -52,12 +61,13 @@
             this.pictureBox1.Size = new System.Drawing.Size(651, 392);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // Circle
             // 
-            this.Circle.Location = new System.Drawing.Point(230, 405);
+            this.Circle.Location = new System.Drawing.Point(245, 398);
             this.Circle.Name = "Circle";
             this.Circle.Size = new System.Drawing.Size(75, 23);
             this.Circle.TabIndex = 1;
@@ -69,15 +79,15 @@
             // 
             this.bttnRectangle.Location = new System.Drawing.Point(230, 434);
             this.bttnRectangle.Name = "bttnRectangle";
-            this.bttnRectangle.Size = new System.Drawing.Size(75, 23);
+            this.bttnRectangle.Size = new System.Drawing.Size(103, 23);
             this.bttnRectangle.TabIndex = 2;
-            this.bttnRectangle.Text = "Квадрат";
+            this.bttnRectangle.Text = "Прямоугольник";
             this.bttnRectangle.UseVisualStyleBackColor = true;
             this.bttnRectangle.Click += new System.EventHandler(this.Rectangle_Click);
             // 
             // bttnClean
             // 
-            this.bttnClean.Location = new System.Drawing.Point(311, 405);
+            this.bttnClean.Location = new System.Drawing.Point(339, 398);
             this.bttnClean.Name = "bttnClean";
             this.bttnClean.Size = new System.Drawing.Size(75, 23);
             this.bttnClean.TabIndex = 3;
@@ -87,7 +97,7 @@
             // 
             // WidthValue
             // 
-            this.WidthValue.Location = new System.Drawing.Point(12, 437);
+            this.WidthValue.Location = new System.Drawing.Point(6, 18);
             this.WidthValue.Minimum = new decimal(new int[] {
             2,
             0,
@@ -115,7 +125,7 @@
             // 
             // HeightValue
             // 
-            this.HeightValue.Location = new System.Drawing.Point(75, 437);
+            this.HeightValue.Location = new System.Drawing.Point(72, 21);
             this.HeightValue.Minimum = new decimal(new int[] {
             2,
             0,
@@ -133,7 +143,7 @@
             // 
             // RadiusValue
             // 
-            this.RadiusValue.Location = new System.Drawing.Point(126, 437);
+            this.RadiusValue.Location = new System.Drawing.Point(3, 21);
             this.RadiusValue.Minimum = new decimal(new int[] {
             2,
             0,
@@ -151,7 +161,7 @@
             // 
             // bttnPaint
             // 
-            this.bttnPaint.Location = new System.Drawing.Point(311, 434);
+            this.bttnPaint.Location = new System.Drawing.Point(339, 434);
             this.bttnPaint.Name = "bttnPaint";
             this.bttnPaint.Size = new System.Drawing.Size(90, 23);
             this.bttnPaint.TabIndex = 8;
@@ -161,30 +171,101 @@
             // 
             // coordinatesX
             // 
-            this.coordinatesX.Location = new System.Drawing.Point(515, 398);
+            this.coordinatesX.Location = new System.Drawing.Point(539, 398);
             this.coordinatesX.Name = "coordinatesX";
             this.coordinatesX.Size = new System.Drawing.Size(100, 20);
             this.coordinatesX.TabIndex = 9;
+            this.coordinatesX.Text = "0";
+            this.coordinatesX.MouseClick += new System.Windows.Forms.MouseEventHandler(this.coordinatesX_MouseClick);
             // 
             // coordinatesY
             // 
-            this.coordinatesY.Location = new System.Drawing.Point(515, 436);
+            this.coordinatesY.Location = new System.Drawing.Point(539, 434);
             this.coordinatesY.Name = "coordinatesY";
             this.coordinatesY.Size = new System.Drawing.Size(100, 20);
             this.coordinatesY.TabIndex = 10;
+            this.coordinatesY.Text = "0";
+            this.coordinatesY.MouseClick += new System.Windows.Forms.MouseEventHandler(this.coordinatesY_MouseClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(458, 395);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(433, 424);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Ширина";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(69, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Длина";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Радиус";
+            // 
+            // panelRec
+            // 
+            this.panelRec.Controls.Add(this.WidthValue);
+            this.panelRec.Controls.Add(this.HeightValue);
+            this.panelRec.Controls.Add(this.label2);
+            this.panelRec.Controls.Add(this.label1);
+            this.panelRec.Location = new System.Drawing.Point(0, 419);
+            this.panelRec.Name = "panelRec";
+            this.panelRec.Size = new System.Drawing.Size(120, 44);
+            this.panelRec.TabIndex = 16;
+            this.panelRec.Visible = false;
+            // 
+            // panelCir
+            // 
+            this.panelCir.Controls.Add(this.RadiusValue);
+            this.panelCir.Controls.Add(this.label3);
+            this.panelCir.Location = new System.Drawing.Point(126, 419);
+            this.panelCir.Name = "panelCir";
+            this.panelCir.Size = new System.Drawing.Size(55, 44);
+            this.panelCir.TabIndex = 17;
+            this.panelCir.Visible = false;
             // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 469);
+            this.Controls.Add(this.panelCir);
+            this.Controls.Add(this.panelRec);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.coordinatesY);
             this.Controls.Add(this.coordinatesX);
             this.Controls.Add(this.bttnPaint);
-            this.Controls.Add(this.RadiusValue);
-            this.Controls.Add(this.HeightValue);
             this.Controls.Add(this.button_Color);
-            this.Controls.Add(this.WidthValue);
             this.Controls.Add(this.bttnClean);
             this.Controls.Add(this.bttnRectangle);
             this.Controls.Add(this.Circle);
@@ -196,6 +277,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeightValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadiusValue)).EndInit();
+            this.panelRec.ResumeLayout(false);
+            this.panelRec.PerformLayout();
+            this.panelCir.ResumeLayout(false);
+            this.panelCir.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,6 +299,13 @@
         private System.Windows.Forms.Button bttnPaint;
         private System.Windows.Forms.TextBox coordinatesX;
         private System.Windows.Forms.TextBox coordinatesY;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelRec;
+        private System.Windows.Forms.Panel panelCir;
     }
 }
 
