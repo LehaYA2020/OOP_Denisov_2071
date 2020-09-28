@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Circle = new System.Windows.Forms.Button();
             this.bttnRectangle = new System.Windows.Forms.Button();
             this.bttnClean = new System.Windows.Forms.Button();
@@ -46,24 +45,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelRec = new System.Windows.Forms.Panel();
             this.panelCir = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeightValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadiusValue)).BeginInit();
             this.panelRec.SuspendLayout();
             this.panelCir.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(651, 392);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // Circle
             // 
@@ -253,11 +241,23 @@
             this.panelCir.TabIndex = 17;
             this.panelCir.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(650, 389);
+            this.panel1.TabIndex = 18;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 469);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCir);
             this.Controls.Add(this.panelRec);
             this.Controls.Add(this.textBox1);
@@ -269,11 +269,9 @@
             this.Controls.Add(this.bttnClean);
             this.Controls.Add(this.bttnRectangle);
             this.Controls.Add(this.Circle);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Paint";
             this.Text = "Paint";
             this.Load += new System.EventHandler(this.Paint_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeightValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadiusValue)).EndInit();
@@ -287,8 +285,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Circle;
         private System.Windows.Forms.Button bttnRectangle;
         private System.Windows.Forms.Button bttnClean;
@@ -306,6 +302,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelRec;
         private System.Windows.Forms.Panel panelCir;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

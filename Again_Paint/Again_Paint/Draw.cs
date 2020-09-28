@@ -9,7 +9,7 @@ namespace Again_Paint
 {
     class Drawer
     {
-        public virtual int Width{ get; set; }
+        public virtual int Width { get; set; }
         public virtual int Height { get; set; }
         public virtual int Radious { get; set; }
         public virtual int X { get; set; }

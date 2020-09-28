@@ -17,11 +17,9 @@ namespace Again_Paint
 
         private int startY = 0;
 
-        private bool inside = false;
-
         private Color color = Color.Black;
 
-        public virtual Color Clr
+        public override Color Clr
         {
             get { return color; }
             set { color = value; }
@@ -85,10 +83,9 @@ namespace Again_Paint
         {
             if ((x > this.startX - Width / 2) && (x < this.startX + Width / 2) && (y > this.startY - Height / 2) && (y < this.startY + Height / 2))
             {
-                inside = true;
+                return true;
             }
-            else { inside = false; }
-            return inside;
+            else { return false; }
         }
     }
 }

@@ -10,10 +10,9 @@ namespace Again_Paint
 
         private Color color = Color.Black;
 
-        private int x = 0;
+        private int startX = 0;
 
-        private int y = 0;
-        private bool inside = false;
+        private int startY = 0;
 
         public override int Radious
         {
@@ -26,28 +25,31 @@ namespace Again_Paint
                 radious = value;
             }
         }
+
         public override int X
         {
             get
             {
-                return x;
+                return startX;
             }
             set
             {
-                x = value;
+                startX = value;
             }
         }
+
         public override int Y
         {
             get
             {
-                return y;
+                return startY;
             }
             set
             {
-                y = value;
+                startY = value;
             }
         }
+
         public override Color Clr
         {
             get { return color; }
@@ -56,27 +58,23 @@ namespace Again_Paint
 
         public MyCyrcle(int x, int y, int radious)
         {
-            this.x = x;
-            this.y = y;
+            this.startX = x;
+            this.startY = y;
             this.radious = radious;
         }
 
-
         public override void Draw(Graphics G)
         {
-            G.DrawEllipse(new Pen(new SolidBrush(Clr), 3), x - Radious / 2, y - Radious / 2, Radious, Radious);
+            G.DrawEllipse(new Pen(new SolidBrush(Clr), 3), startX - Radious / 2, startY - Radious / 2, Radious, Radious);
         }
 
-        public override void Move(int x, int y)
-        {
-        }
         public override bool IsPointInside(int x, int y)
         {
-            if (x + Radious <= Radious && x - Radious >= Radious && y + Radious <= Radious && x - Radious >= Radious)
+            if (Math.Pow((x - this.startX), 2) + Math.Pow((y - this.startY), 2) <= Math.Pow(Radious / 2, 2))
             {
-                inside= true;
+                return true;
             }
-            return inside;
+            else { return false; }
         }
     }
 }

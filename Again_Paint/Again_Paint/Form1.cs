@@ -9,9 +9,12 @@ namespace Again_Paint
     {
         List<Drawer> figures = new List<Drawer>();
         Drawer draw;
+        Drawer Count;
         bool isDown = false;
         int x;
         int y;
+        int deltaX = 0;
+        int deltaY = 0;
 
         Graphics G;
         public Paint()
@@ -26,29 +29,16 @@ namespace Again_Paint
             panelRec.Visible = false;
         }
 
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void Paint_Load(object sender, EventArgs e)
         {
-            G = pictureBox1.CreateGraphics();
+            G = panel1.CreateGraphics();
         }
 
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(Convert.ToString(e.X) + " " + Convert.ToString(e.Y));
-            if (draw.IsPointInside(e.X, e.Y))
-            {
-                MessageBox.Show("Loles");
-            }
-            else { MessageBox.Show("Suck"); }
-        }
+        
 
         private void bttnClean_Click(object sender, EventArgs e)
         {
-            G.Clear(pictureBox1.BackColor);
+            G.Clear(panel1.BackColor);
         }
 
         private void WidthValue_ValueChanged(object sender, EventArgs e)
@@ -89,23 +79,24 @@ namespace Again_Paint
             draw.Draw(G);
             figures.Add(draw);
         }
+
         private void Assign()
         {
             x = Convert.ToInt32(coordinatesX.Text);
             y = Convert.ToInt32(coordinatesY.Text);
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-            foreach (Drawer r in figures)
-            {
-                r.Draw(G);
-            }
-        }
+        //private void panel1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    foreach (Drawer r in figures)
+        //    {
+        //        r.Draw(G);
+        //    }
+        //}
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = Convert.ToString(figures.Count + " " + figures[0].X + " " + figures[0].Y + " " + figures[0].Radious);
+            textBox1.Text = Convert.ToString(figures.Count );
         }
 
         private void coordinatesX_MouseClick(object sender, MouseEventArgs e)
@@ -117,5 +108,61 @@ namespace Again_Paint
         {
             coordinatesY.Clear();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (Drawer r in figures)
+            {
+                r.Draw(G);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDown = false;
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (Drawer item in figures)
+            {
+                if (item.IsPointInside(e.X, e.Y))
+                {
+                    deltaX = e.X - item.X;
+                    deltaY = e.Y - item.Y;
+                    isDown = true;
+                    Count = item;
+                }
+            }
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDown)
+            {
+                Count.X = e.X - deltaX;
+                Count.Y = e.Y - deltaY;
+                panel1.Invalidate();
+            }
+        }
+
+        //private void panel1_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    foreach (Drawer i in figures)
+        //    {
+        //        if (i.IsPointInside(e.X, e.Y))
+        //        {
+        //            deltaX = e.X - i.X;
+        //            deltaY = e.Y - i.Y;
+        //            isDown = true;
+        //        }
+        //    }
+        //}
+
+        //private void panel1_MouseUp(object sender, MouseEventArgs e)
+        //{
+        //    isDown = false;
+        //    panel1.Invalidate();
+        //}
     }
 }
