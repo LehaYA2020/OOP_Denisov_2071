@@ -11,7 +11,7 @@ namespace Again_Paint
     {
         public virtual int Width { get; set; }
         public virtual int Height { get; set; }
-        public virtual int Radious { get; set; }
+        public virtual int Radius { get; set; }
         public virtual int X { get; set; }
         public virtual int Y { get; set; }
         public virtual Color Clr { get; set; }

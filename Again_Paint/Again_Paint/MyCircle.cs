@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Again_Paint
 {
-    class MyCyrcle : Drawer
+    class MyCircle : Drawer
     {
         private int radious = 2;
 
@@ -14,7 +14,7 @@ namespace Again_Paint
 
         private int startY = 0;
 
-        public override int Radious
+        public override int Radius
         {
             get
             {
@@ -56,7 +56,7 @@ namespace Again_Paint
             set { color = value; }
         }
 
-        public MyCyrcle(int x, int y, int radious)
+        public MyCircle(int x, int y, int radious)
         {
             this.startX = x;
             this.startY = y;

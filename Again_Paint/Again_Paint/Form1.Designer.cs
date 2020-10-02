@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Circle = new System.Windows.Forms.Button();
-            this.bttnRectangle = new System.Windows.Forms.Button();
             this.bttnClean = new System.Windows.Forms.Button();
             this.WidthValue = new System.Windows.Forms.NumericUpDown();
             this.button_Color = new System.Windows.Forms.Button();
@@ -46,32 +44,14 @@
             this.panelRec = new System.Windows.Forms.Panel();
             this.panelCir = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeightValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadiusValue)).BeginInit();
             this.panelRec.SuspendLayout();
             this.panelCir.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Circle
-            // 
-            this.Circle.Location = new System.Drawing.Point(245, 398);
-            this.Circle.Name = "Circle";
-            this.Circle.Size = new System.Drawing.Size(75, 23);
-            this.Circle.TabIndex = 1;
-            this.Circle.Text = "Круг";
-            this.Circle.UseVisualStyleBackColor = true;
-            this.Circle.Click += new System.EventHandler(this.Circle_Click);
-            // 
-            // bttnRectangle
-            // 
-            this.bttnRectangle.Location = new System.Drawing.Point(230, 434);
-            this.bttnRectangle.Name = "bttnRectangle";
-            this.bttnRectangle.Size = new System.Drawing.Size(103, 23);
-            this.bttnRectangle.TabIndex = 2;
-            this.bttnRectangle.Text = "Прямоугольник";
-            this.bttnRectangle.UseVisualStyleBackColor = true;
-            this.bttnRectangle.Click += new System.EventHandler(this.Rectangle_Click);
             // 
             // bttnClean
             // 
@@ -99,7 +79,6 @@
             0,
             0,
             0});
-            this.WidthValue.ValueChanged += new System.EventHandler(this.WidthValue_ValueChanged);
             // 
             // button_Color
             // 
@@ -127,7 +106,6 @@
             0,
             0,
             0});
-            this.HeightValue.ValueChanged += new System.EventHandler(this.HeightValue_ValueChanged);
             // 
             // RadiusValue
             // 
@@ -145,7 +123,6 @@
             0,
             0,
             0});
-            this.RadiusValue.ValueChanged += new System.EventHandler(this.RadiusValue_ValueChanged);
             // 
             // bttnPaint
             // 
@@ -252,11 +229,37 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(230, 414);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(48, 17);
+            this.radioButton1.TabIndex = 16;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Круг";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButton1_MouseClick);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(230, 437);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(105, 17);
+            this.radioButton2.TabIndex = 17;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Прямоугольник";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButton2_MouseClick);
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 469);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCir);
             this.Controls.Add(this.panelRec);
@@ -267,8 +270,6 @@
             this.Controls.Add(this.bttnPaint);
             this.Controls.Add(this.button_Color);
             this.Controls.Add(this.bttnClean);
-            this.Controls.Add(this.bttnRectangle);
-            this.Controls.Add(this.Circle);
             this.Name = "Paint";
             this.Text = "Paint";
             this.Load += new System.EventHandler(this.Paint_Load);
@@ -285,8 +286,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button Circle;
-        private System.Windows.Forms.Button bttnRectangle;
         private System.Windows.Forms.Button bttnClean;
         private System.Windows.Forms.NumericUpDown WidthValue;
         private System.Windows.Forms.Button button_Color;
@@ -303,6 +302,8 @@
         private System.Windows.Forms.Panel panelRec;
         private System.Windows.Forms.Panel panelCir;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 
