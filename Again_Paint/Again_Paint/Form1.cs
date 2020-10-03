@@ -40,38 +40,11 @@ namespace Again_Paint
             draw.Clr = tmpDialog.Color;
         }
 
-        private void bttnPaint_Click(object sender, EventArgs e)
-        {
-            int X = Convert.ToInt32(coordinatesX.Text);
-            int Y = Convert.ToInt32(coordinatesY.Text);
-            if (radioButton1.Checked)
-            {
-                int Radius = (int)RadiusValue.Value;
-                draw = new MyCircle(X, Y, Radius);
-            }
-            if (radioButton2.Checked)
-            {
-                int Width = (int)WidthValue.Value;
-                int Height = (int)HeightValue.Value;
-                draw = new MyRectangle(X, Y, Width,Height);
-            }
-            draw.Draw(G);
-            figures.Add(draw);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = Convert.ToString(figures.Count);
-        }
-
-        private void coordinatesX_MouseClick(object sender, MouseEventArgs e)
-        {
-            coordinatesX.Clear();
-        }
-
-        private void coordinatesY_MouseClick(object sender, MouseEventArgs e)
-        {
-            coordinatesY.Clear();
+            //draw = new MyWagon(333, 333, 150);
+            //draw.Draw(G);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -92,7 +65,7 @@ namespace Again_Paint
         {
             foreach (Drawer item in figures)
             {
-                if (item.IsPointInside(e.X, e.Y))
+                if (item.IsPointInside(e.X, e.Y) && radioButton3.Checked)
                 {
                     deltaX = e.X - item.X;
                     deltaY = e.Y - item.Y;
@@ -104,10 +77,9 @@ namespace Again_Paint
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (isDown)
+            if (isDown && radioButton3.Checked)
             {
-                MovingItem.X = e.X - deltaX;
-                MovingItem.Y = e.Y - deltaY;
+                MovingItem.Move(deltaX, deltaY, e.X, e.Y);
                 panel1.Invalidate();
             }
         }
@@ -122,6 +94,31 @@ namespace Again_Paint
         {
             panelCir.Visible = false;
             panelRec.Visible = true;
+        }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                int Radius = (int)RadiusValue.Value;
+                draw = new MyCircle(e.X, e.Y, Radius);
+            }
+            if (radioButton2.Checked)
+            {
+                int Width = (int)WidthValue.Value;
+                int Height = (int)HeightValue.Value;
+                draw = new MyRectangle(e.X, e.Y, Width, Height);
+            }
+            if (radioButton4.Checked)
+            {
+                int L = (int)lValue.Value;
+                draw = new MyWagon(e.X, e.Y, L);
+            }
+            if (radioButton3.Checked)
+            {
+            }
+            draw.Draw(G);
+            figures.Add(draw);
         }
     }
 }

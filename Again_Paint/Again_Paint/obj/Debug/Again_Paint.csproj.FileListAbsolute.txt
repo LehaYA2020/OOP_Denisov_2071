@@ -17,3 +17,12 @@ C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\
 C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csproj.GenerateResource.cache
 C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.exe
 C:\Users\lesha\Desktop\Repositories\1_SEMINAR\Again_Paint\Again_Paint\obj\Debug\Again_Paint.pdb
+D:\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csprojAssemblyReference.cache
+D:\Again_Paint\Again_Paint\obj\Debug\Again_Paint.Paint.resources
+D:\Again_Paint\Again_Paint\obj\Debug\Again_Paint.Properties.Resources.resources
+D:\Again_Paint\Again_Paint\obj\Debug\Again_Paint.csproj.GenerateResource.cache
+D:\Again_Paint\Again_Paint\obj\Debug\Again_Paint.exe
+D:\Again_Paint\Again_Paint\obj\Debug\Again_Paint.pdb
+D:\Again_Paint\Again_Paint\bin\Debug\Again_Paint.exe.config
+D:\Again_Paint\Again_Paint\bin\Debug\Again_Paint.exe
+D:\Again_Paint\Again_Paint\bin\Debug\Again_Paint.pdb

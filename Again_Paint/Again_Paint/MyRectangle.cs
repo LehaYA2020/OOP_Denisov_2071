@@ -64,6 +64,21 @@ namespace Again_Paint
             }
         }
 
+        public override int Height
+        {
+            get
+            {
+                return height;
+            }
+            set
+            {
+                if (value > 1 && value <= 500)
+                {
+                    height = value;
+                }
+            }
+        }
+
         public MyRectangle(int x, int y, int width, int height)
         {
             this.startX = x;
@@ -72,11 +87,14 @@ namespace Again_Paint
             this.height = height;
         }
 
-        public override int Height { get { return height; } set { if (value > 1 && value <= 500) { height = value; } } }
+        public override void Move(int deltaX, int deltaY, int eX, int eY)
+        {
+            base.Move(deltaX, deltaY, eX, eY);
+        }
 
         public override void Draw(Graphics G)
         {
-            G.DrawRectangle(new Pen(new SolidBrush(Clr), 2), startX - Width / 2, startY - Width / 2, Width, Height);
+            G.DrawRectangle(new Pen(new SolidBrush(Clr), 2), startX - Width / 2, startY - Height / 2, Width, Height);
         }
 
         public override bool IsPointInside(int x, int y)

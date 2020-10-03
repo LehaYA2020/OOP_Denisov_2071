@@ -63,14 +63,18 @@ namespace Again_Paint
             this.radious = radious;
         }
 
+        public override void Move(int deltaX, int deltaY, int eX, int eY)
+        {
+            base.Move(deltaX, deltaY, eX, eY);
+        }
         public override void Draw(Graphics G)
         {
-            G.DrawEllipse(new Pen(new SolidBrush(Clr), 3), startX - Radious / 2, startY - Radious / 2, Radious, Radious);
+            G.DrawEllipse(new Pen(new SolidBrush(Clr), 3), startX - Radius / 2, startY - Radius / 2, Radius, Radius);
         }
 
         public override bool IsPointInside(int x, int y)
         {
-            if (Math.Pow((x - this.startX), 2) + Math.Pow((y - this.startY), 2) <= Math.Pow(Radious / 2, 2))
+            if (Math.Pow((x - this.startX), 2) + Math.Pow((y - this.startY), 2) <= Math.Pow(Radius / 2, 2))
             {
                 return true;
             }
