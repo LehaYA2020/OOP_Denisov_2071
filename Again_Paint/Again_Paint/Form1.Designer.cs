@@ -46,8 +46,9 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lValue = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.lValue = new System.Windows.Forms.NumericUpDown();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeightValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadiusValue)).BeginInit();
@@ -59,7 +60,7 @@
             // 
             // bttnClean
             // 
-            this.bttnClean.Location = new System.Drawing.Point(449, 440);
+            this.bttnClean.Location = new System.Drawing.Point(575, 442);
             this.bttnClean.Name = "bttnClean";
             this.bttnClean.Size = new System.Drawing.Size(75, 23);
             this.bttnClean.TabIndex = 3;
@@ -87,7 +88,7 @@
             // button_Color
             // 
             this.button_Color.BackColor = System.Drawing.SystemColors.ControlText;
-            this.button_Color.Location = new System.Drawing.Point(295, 434);
+            this.button_Color.Location = new System.Drawing.Point(262, 434);
             this.button_Color.Name = "button_Color";
             this.button_Color.Size = new System.Drawing.Size(37, 23);
             this.button_Color.TabIndex = 5;
@@ -261,6 +262,15 @@
             this.panel2.Size = new System.Drawing.Size(69, 44);
             this.panel2.TabIndex = 21;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(13, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "L";
+            // 
             // lValue
             // 
             this.lValue.Location = new System.Drawing.Point(3, 21);
@@ -278,20 +288,23 @@
             0,
             0});
             // 
-            // label4
+            // radioButton5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "L";
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(449, 439);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(57, 17);
+            this.radioButton5.TabIndex = 22;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Поезд";
+            this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 469);
+            this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
@@ -343,6 +356,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown lValue;
+        private System.Windows.Forms.RadioButton radioButton5;
     }
 }
 

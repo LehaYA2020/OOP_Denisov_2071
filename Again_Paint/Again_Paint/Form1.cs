@@ -30,6 +30,7 @@ namespace Again_Paint
         private void bttnClean_Click(object sender, EventArgs e)
         {
             G.Clear(panel1.BackColor);
+            figures.Clear();
         }
 
         private void button_Color_Click(object sender, EventArgs e)
@@ -113,11 +114,18 @@ namespace Again_Paint
             {
                 int L = (int)lValue.Value;
                 draw = new MyWagon(e.X, e.Y, L);
+                draw.Draw(G);
+                draw.Weight(e.X, e.Y, G);
+            }
+            if (radioButton5.Checked)
+            {
+                int length = 4;
+                int L = (int)lValue.Value;
+                draw = new MyTrain(e.X, e.Y, L, length);
             }
             if (radioButton3.Checked)
             {
             }
-            draw.Draw(G);
             figures.Add(draw);
         }
     }

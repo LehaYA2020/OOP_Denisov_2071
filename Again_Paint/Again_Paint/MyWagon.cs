@@ -14,7 +14,8 @@ namespace Again_Paint
         MyCircle Wheel_1, Wheel_2;
 
         private int l = 2;
-        int width, height, x, y, radius;
+
+        int width, height, x, y, radius, weight;
 
         public override int X
         {
@@ -71,6 +72,7 @@ namespace Again_Paint
                 height = value;
             }
         }
+        
 
         //public override int Radius
         //{
@@ -91,6 +93,7 @@ namespace Again_Paint
             height = l / 2;
 
             width = l;
+
             radius = width / 5;
 
             Body = new MyRectangle(x, y, width, height);
@@ -104,6 +107,14 @@ namespace Again_Paint
             Body.Draw(G);
             Wheel_1.Draw(G);
             Wheel_2.Draw(G);
+            //Weight(Body.X, Body.Y, G);
+        }
+        public override void Weight(int x, int y, Graphics G)
+        {
+            Random rnd = new Random();
+            int cargo = rnd.Next(100);
+            G.DrawString(Convert.ToString(cargo), new Font("Arial", 10), Brushes.Black, x - 10, y - 10);
+
         }
         public override void Move(int StartX, int StartY, int eX, int eY)
         {
