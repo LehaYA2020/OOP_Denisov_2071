@@ -9,14 +9,14 @@ namespace Again_Paint
 {
     class MyWagon : Drawer
     {
-        MyRectangle Body;
+        private MyRectangle Body;
 
-        MyCircle Wheel_1, Wheel_2;
+        private MyCircle Wheel_1, Wheel_2;
 
         private int l = 2;
 
-        int width, height, x, y, radius, weight;
-
+        private int width, height, x, y, radius, weight;
+        private Random rnd = new Random();
         public override int X
         {
             get
@@ -72,7 +72,18 @@ namespace Again_Paint
                 height = value;
             }
         }
-        
+        public override int Weight
+        {
+            get
+            {
+                return weight;
+            }
+            set
+            {
+                weight = value;
+            }
+        }
+
 
         //public override int Radius
         //{
@@ -94,6 +105,8 @@ namespace Again_Paint
 
             width = l;
 
+            weight = rnd.Next(100);
+
             radius = width / 5;
 
             Body = new MyRectangle(x, y, width, height);
@@ -107,14 +120,7 @@ namespace Again_Paint
             Body.Draw(G);
             Wheel_1.Draw(G);
             Wheel_2.Draw(G);
-            //Weight(Body.X, Body.Y, G);
-        }
-        public override void Weight(int x, int y, Graphics G)
-        {
-            Random rnd = new Random();
-            int cargo = rnd.Next(100);
-            G.DrawString(Convert.ToString(cargo), new Font("Arial", 10), Brushes.Black, x - 10, y - 10);
-
+            G.DrawString(Convert.ToString(weight), new Font("Arial", L / 4), Brushes.Black, Body.X - L / 4, Body.Y - L / 4);
         }
         public override void Move(int StartX, int StartY, int eX, int eY)
         {

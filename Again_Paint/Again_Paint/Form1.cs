@@ -30,6 +30,7 @@ namespace Again_Paint
         private void bttnClean_Click(object sender, EventArgs e)
         {
             G.Clear(panel1.BackColor);
+            WeightSumVal.Clear();
             figures.Clear();
         }
 
@@ -43,7 +44,7 @@ namespace Again_Paint
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = Convert.ToString(figures.Count);
+            WeightSumVal.Text = Convert.ToString(figures.Count);
             //draw = new MyWagon(333, 333, 150);
             //draw.Draw(G);
         }
@@ -89,12 +90,14 @@ namespace Again_Paint
         {
             panelCir.Visible = true;
             panelRec.Visible = false;
+            panelTrain.Visible = false;
         }
 
         private void radioButton2_MouseClick(object sender, MouseEventArgs e)
         {
             panelCir.Visible = false;
             panelRec.Visible = true;
+            panelTrain.Visible = false;
         }
 
         private void panel1_MouseClick(object sender, MouseEventArgs e)
@@ -114,19 +117,34 @@ namespace Again_Paint
             {
                 int L = (int)lValue.Value;
                 draw = new MyWagon(e.X, e.Y, L);
-                draw.Draw(G);
-                draw.Weight(e.X, e.Y, G);
             }
             if (radioButton5.Checked)
             {
-                int length = 4;
+                int length = (int)lengthValue.Value;
                 int L = (int)lValue.Value;
                 draw = new MyTrain(e.X, e.Y, L, length);
+                WeightSumVal.Text = Convert.ToString(draw.WeightSum());
             }
             if (radioButton3.Checked)
             {
             }
+
+            draw.Draw(G);
             figures.Add(draw);
+        }
+
+        private void radioButton5_MouseClick(object sender, MouseEventArgs e)
+        {
+            panelCir.Visible = false;
+            panelRec.Visible = false;
+            panelTrain.Visible = true;
+        }
+
+        private void radioButton4_MouseClick(object sender, MouseEventArgs e)
+        {
+            panelCir.Visible = false;
+            panelRec.Visible = false;
+            panelTrain.Visible = true;
         }
     }
 }

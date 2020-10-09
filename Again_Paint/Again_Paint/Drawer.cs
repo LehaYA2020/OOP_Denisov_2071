@@ -13,6 +13,7 @@ namespace Again_Paint
         public virtual int Height { get; set; }
         public virtual int Radius { get; set; }
         public virtual int Length { get; set; }
+        public virtual int Weight { get; set; }
         public virtual int L { get; set; }
         public virtual int X { get; set; }
         public virtual int Y { get; set; }
@@ -33,6 +34,9 @@ namespace Again_Paint
         {
             return false;
         }
-        public virtual void Weight(int x, int y, Graphics G) { }
+        public virtual int WeightSum()
+        {
+            return 0;
+        }
     }
 }

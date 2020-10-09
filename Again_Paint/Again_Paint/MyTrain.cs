@@ -12,6 +12,7 @@ namespace Again_Paint
         private int x, y, l, length;
         private MyWagon Wagon;
         private List<MyWagon> Wagons = new List<MyWagon>();
+        public int weightSum;
 
         public override int X
         {
@@ -73,12 +74,22 @@ namespace Again_Paint
         }
         public override void WagonsAdding(int x, int y)
         {
+            Random rnd = new Random();
             for (int i = 1; i <= Length; i++)
             {
                 Wagon = new MyWagon(x, y, L);
+                Wagon.Weight = rnd.Next(100);
                 Wagons.Add(Wagon);
                 x += (Wagon.Width + 4);
             }
+        }
+        public override int WeightSum()
+        {
+            foreach(MyWagon item in Wagons)
+            {
+                weightSum += item.Weight;
+            }
+            return weightSum;
         }
     }
 }

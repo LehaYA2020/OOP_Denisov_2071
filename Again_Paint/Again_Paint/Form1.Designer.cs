@@ -34,7 +34,7 @@
             this.HeightValue = new System.Windows.Forms.NumericUpDown();
             this.RadiusValue = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WeightSumVal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +45,9 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelTrain = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lengthValue = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.lValue = new System.Windows.Forms.NumericUpDown();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
@@ -54,7 +56,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.RadiusValue)).BeginInit();
             this.panelRec.SuspendLayout();
             this.panelCir.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelTrain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lengthValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +91,7 @@
             // button_Color
             // 
             this.button_Color.BackColor = System.Drawing.SystemColors.ControlText;
-            this.button_Color.Location = new System.Drawing.Point(262, 434);
+            this.button_Color.Location = new System.Drawing.Point(295, 439);
             this.button_Color.Name = "button_Color";
             this.button_Color.Size = new System.Drawing.Size(37, 23);
             this.button_Color.TabIndex = 5;
@@ -139,12 +142,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // WeightSumVal
             // 
-            this.textBox1.Location = new System.Drawing.Point(550, 416);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
+            this.WeightSumVal.Location = new System.Drawing.Point(550, 416);
+            this.WeightSumVal.Name = "WeightSumVal";
+            this.WeightSumVal.Size = new System.Drawing.Size(100, 20);
+            this.WeightSumVal.TabIndex = 12;
             // 
             // label1
             // 
@@ -252,15 +255,50 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Вагон";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButton4_MouseClick);
             // 
-            // panel2
+            // panelTrain
             // 
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.lValue);
-            this.panel2.Location = new System.Drawing.Point(187, 419);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(69, 44);
-            this.panel2.TabIndex = 21;
+            this.panelTrain.Controls.Add(this.label5);
+            this.panelTrain.Controls.Add(this.lengthValue);
+            this.panelTrain.Controls.Add(this.label4);
+            this.panelTrain.Controls.Add(this.lValue);
+            this.panelTrain.Location = new System.Drawing.Point(187, 419);
+            this.panelTrain.Name = "panelTrain";
+            this.panelTrain.Size = new System.Drawing.Size(102, 44);
+            this.panelTrain.TabIndex = 21;
+            this.panelTrain.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(50, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Длина";
+            // 
+            // lengthValue
+            // 
+            this.lengthValue.Location = new System.Drawing.Point(50, 21);
+            this.lengthValue.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.lengthValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.lengthValue.Name = "lengthValue";
+            this.lengthValue.Size = new System.Drawing.Size(49, 20);
+            this.lengthValue.TabIndex = 17;
+            this.lengthValue.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -298,6 +336,7 @@
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Поезд";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButton5_MouseClick);
             // 
             // Paint
             // 
@@ -305,7 +344,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 469);
             this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelTrain);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
@@ -313,7 +352,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCir);
             this.Controls.Add(this.panelRec);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.WeightSumVal);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_Color);
             this.Controls.Add(this.bttnClean);
@@ -327,8 +366,9 @@
             this.panelRec.PerformLayout();
             this.panelCir.ResumeLayout(false);
             this.panelCir.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelTrain.ResumeLayout(false);
+            this.panelTrain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lengthValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,7 +382,7 @@
         private System.Windows.Forms.NumericUpDown HeightValue;
         private System.Windows.Forms.NumericUpDown RadiusValue;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox WeightSumVal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -353,10 +393,12 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelTrain;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown lValue;
         private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown lengthValue;
     }
 }
 
