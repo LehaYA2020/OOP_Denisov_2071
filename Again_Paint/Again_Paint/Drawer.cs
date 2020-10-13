@@ -25,6 +25,7 @@ namespace Again_Paint
         public virtual void Draw(Graphics G)
         {
         }
+        public virtual void DrawCargo(Graphics G) { }
         public virtual void Move(int deltaX, int deltaY, int eX, int eY)
         {
             X = eX - deltaX;

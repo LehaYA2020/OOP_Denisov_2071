@@ -75,13 +75,44 @@ namespace Again_Paint
         public override void WagonsAdding(int x, int y)
         {
             Random rnd = new Random();
+            Random rndWagon = new Random();
             for (int i = 1; i <= Length; i++)
             {
-                Wagon = new MyWagon(x, y, L);
-                Wagon.Weight = rnd.Next(100);
-                Wagons.Add(Wagon);
-                x += (Wagon.Width + 4);
+                int rndWag = rndWagon.Next(2);
+                if (rndWag == 1)
+                {
+                    Wagon = new CoalWagon(x, y, L);
+                    Wagon.Weight = rnd.Next(100);
+                    Wagons.Add(Wagon);
+                    x += (Wagon.Width + 4);
+                }
+                if (rndWag == 0)
+                {
+                    Wagon = new SandWagon(x, y, L);
+                    Wagon.Weight = rnd.Next(100);
+                    Wagons.Add(Wagon);
+                    x += (Wagon.Width + 4);
+                }
+                
             }
+        }
+        public override void Move(int StartX, int StartY, int eX, int eY)
+        {
+            foreach (MyWagon item in Wagons)
+            {
+                item.Move(StartX, StartY, eX, eY);
+
+                eX += (item.Width + 4);
+            }
+        }
+        public override bool IsPointInside(int Ex, int Ey)
+        {
+            foreach (MyWagon item in Wagons)
+            {
+                if (item.IsPointInside(Ex, Ey)) { return true; }
+                return false;
+            }
+            return false;
         }
         public override int WeightSum()
         {

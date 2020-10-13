@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Again_Paint
 {
-    class MyWagon : Drawer
+    class SandWagon : MyWagon
     {
         private MyRectangle Body;
+        private MyRectangle Cargo;
 
         private MyCircle Wheel_1, Wheel_2;
 
@@ -17,7 +18,6 @@ namespace Again_Paint
 
         private int width, height, x, y, radius, weight;
         private Random rnd = new Random();
-        private CoalWagon Coal;
         public override int X
         {
             get
@@ -84,21 +84,7 @@ namespace Again_Paint
                 weight = value;
             }
         }
-
-
-        //public override int Radius
-        //{
-        //    get
-        //    {
-        //        return radius;
-        //    }
-        //    set
-        //    {
-        //        radius = value;
-        //    }
-        //}
-
-        public MyWagon(int x, int y, int l)
+        public SandWagon(int x, int y, int l) : base(x, y, l)
         {
             L = l;
 
@@ -111,7 +97,8 @@ namespace Again_Paint
             radius = width / 5;
 
             Body = new MyRectangle(x, y, width, height);
-
+            Cargo = new MyRectangle(x, y - (height - 2), width - 4, height / 2);
+            Cargo.Clr = Color.Black;
             Wheel_1 = new MyCircle(x - width / 3, y + height / 2 + (width / 5) / 2 + 1, radius);
 
             Wheel_2 = new MyCircle(x + width / 3, y + height / 2 + (width / 5) / 2 + 1, radius);
@@ -119,6 +106,7 @@ namespace Again_Paint
         public override void Draw(Graphics G)
         {
             Body.Draw(G);
+            Cargo.DrawCargo(G);
             Wheel_1.Draw(G);
             Wheel_2.Draw(G);
             G.DrawString(Convert.ToString(weight), new Font("Arial", L / 4), Brushes.Black, Body.X - L / 4, Body.Y - L / 4);
@@ -127,6 +115,8 @@ namespace Again_Paint
         {
             Body.X = eX - x;
             Body.Y = eY - y;
+            Cargo.X = eX - x;
+            Cargo.Y = eY + (y - (height - 2));
             Wheel_1.X = eX - x - width / 4;
             Wheel_1.Y = eY - y + height / 2 + (width / 5) / 2 + 2;
             Wheel_2.X = eX - x + width / 4;
@@ -142,7 +132,11 @@ namespace Again_Paint
             if (Wheel_1.IsPointInside(Ex, Ey))
             {
                 return true;
+            }
 
+            if (Cargo.IsPointInside(Ex, Ey))
+            {
+                return true;
             }
 
             if (Wheel_2.IsPointInside(Ex, Ey))

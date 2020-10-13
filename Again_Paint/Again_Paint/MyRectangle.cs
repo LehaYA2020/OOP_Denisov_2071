@@ -96,6 +96,10 @@ namespace Again_Paint
         {
             G.DrawRectangle(new Pen(new SolidBrush(Clr), 2), startX - Width / 2, startY - Height / 2, Width, Height);
         }
+        public override void DrawCargo(Graphics G)
+        {
+            G.FillRectangle(new SolidBrush(Clr), startX - Width / 2, startY - Height / 2, Width, Height);
+        }
 
         public override bool IsPointInside(int x, int y)
         {

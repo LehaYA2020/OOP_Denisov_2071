@@ -13,6 +13,7 @@ namespace Again_Paint
         bool isDown = false;
         int deltaX = 0;
         int deltaY = 0;
+        ColorDialog tmpDialog = new ColorDialog();
 
         Graphics G;
         public Paint()
@@ -36,15 +37,17 @@ namespace Again_Paint
 
         private void button_Color_Click(object sender, EventArgs e)
         {
-            ColorDialog tmpDialog = new ColorDialog();
             tmpDialog.ShowDialog();
             button_Color.BackColor = tmpDialog.Color;
-            draw.Clr = tmpDialog.Color;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            WeightSumVal.Text = Convert.ToString(figures.Count);
+            draw = new CoalWagon(333,333,60);
+            figures.Add(draw);
+            draw.Draw(G);
+
+            //WeightSumVal.Text = Convert.ToString(figures.Count);
             //draw = new MyWagon(333, 333, 150);
             //draw.Draw(G);
         }
