@@ -9,15 +9,7 @@ namespace Again_Paint
 {
     class CoalWagon : MyWagon
     {
-        private MyRectangle Body;
         private MyRectangle Cargo;
-
-        private MyCircle Wheel_1, Wheel_2;
-
-        private int l = 2;
-
-        private int width, height, x, y, radius, weight;
-        private Random rnd = new Random();
         public override int X
         {
             get

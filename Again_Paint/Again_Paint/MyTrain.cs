@@ -9,10 +9,9 @@ namespace Again_Paint
 {
     class MyTrain : MyWagon
     {
-        private int x, y, l, length;
-        private MyWagon Wagon;
+        private int length;
         private List<MyWagon> Wagons = new List<MyWagon>();
-        public int weightSum;
+        private int weightSum;
 
         public override int X
         {
@@ -47,7 +46,7 @@ namespace Again_Paint
                 l = value;
             }
         }
-        public override int Length
+        public  int Length
         {
             get
             {
@@ -74,6 +73,7 @@ namespace Again_Paint
         }
         public override void WagonsAdding(int x, int y)
         {
+            MyWagon Wagon;
             Random rnd = new Random();
             Random rndWagon = new Random();
             for (int i = 1; i <= Length; i++)
@@ -93,7 +93,7 @@ namespace Again_Paint
                     Wagons.Add(Wagon);
                     x += (Wagon.Width + 4);
                 }
-                
+
             }
         }
         public override void Move(int StartX, int StartY, int eX, int eY)
@@ -116,7 +116,7 @@ namespace Again_Paint
         }
         public override int WeightSum()
         {
-            foreach(MyWagon item in Wagons)
+            foreach (MyWagon item in Wagons)
             {
                 weightSum += item.Weight;
             }

@@ -12,9 +12,7 @@ namespace Again_Paint
         public virtual int Width { get; set; }
         public virtual int Height { get; set; }
         public virtual int Radius { get; set; }
-        public virtual int Length { get; set; }
         public virtual int Weight { get; set; }
-        public virtual int L { get; set; }
         public virtual int X { get; set; }
         public virtual int Y { get; set; }
         public virtual Color Clr { get; set; }

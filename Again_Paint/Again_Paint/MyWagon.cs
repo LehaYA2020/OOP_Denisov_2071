@@ -9,15 +9,14 @@ namespace Again_Paint
 {
     class MyWagon : Drawer
     {
-        private MyRectangle Body;
+        protected MyRectangle Body;
 
-        private MyCircle Wheel_1, Wheel_2;
+        protected MyCircle Wheel_1, Wheel_2;
 
-        private int l = 2;
+        protected int l = 2;
 
-        private int width, height, x, y, radius, weight;
-        private Random rnd = new Random();
-        private CoalWagon Coal;
+        protected int width, height, x, y, radius, weight;
+        protected Random rnd = new Random();
         public override int X
         {
             get
@@ -40,7 +39,7 @@ namespace Again_Paint
                 y = value;
             }
         }
-        public override int L
+        public virtual int L
         {
             get
             {
