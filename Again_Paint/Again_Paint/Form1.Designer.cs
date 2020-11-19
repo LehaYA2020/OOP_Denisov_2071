@@ -51,6 +51,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lValue = new System.Windows.Forms.NumericUpDown();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.AddRadioButton = new System.Windows.Forms.RadioButton();
+            this.unloadBttn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WidthValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeightValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RadiusValue)).BeginInit();
@@ -237,7 +239,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(449, 416);
+            this.radioButton3.Location = new System.Drawing.Point(449, 419);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(52, 17);
             this.radioButton3.TabIndex = 19;
@@ -329,7 +331,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(449, 439);
+            this.radioButton5.Location = new System.Drawing.Point(449, 396);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(57, 17);
             this.radioButton5.TabIndex = 22;
@@ -338,11 +340,34 @@
             this.radioButton5.UseVisualStyleBackColor = true;
             this.radioButton5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButton5_MouseClick);
             // 
+            // AddRadioButton
+            // 
+            this.AddRadioButton.AutoSize = true;
+            this.AddRadioButton.Location = new System.Drawing.Point(449, 439);
+            this.AddRadioButton.Name = "AddRadioButton";
+            this.AddRadioButton.Size = new System.Drawing.Size(44, 17);
+            this.AddRadioButton.TabIndex = 23;
+            this.AddRadioButton.TabStop = true;
+            this.AddRadioButton.Text = "Add";
+            this.AddRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // unloadBttn
+            // 
+            this.unloadBttn.Location = new System.Drawing.Point(575, 472);
+            this.unloadBttn.Name = "unloadBttn";
+            this.unloadBttn.Size = new System.Drawing.Size(75, 23);
+            this.unloadBttn.TabIndex = 25;
+            this.unloadBttn.Text = "Unload";
+            this.unloadBttn.UseVisualStyleBackColor = true;
+            this.unloadBttn.Click += new System.EventHandler(this.unloadBttn_Click);
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 469);
+            this.ClientSize = new System.Drawing.Size(651, 507);
+            this.Controls.Add(this.unloadBttn);
+            this.Controls.Add(this.AddRadioButton);
             this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.panelTrain);
             this.Controls.Add(this.radioButton4);
@@ -399,6 +424,8 @@
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown lengthValue;
+        private System.Windows.Forms.RadioButton AddRadioButton;
+        private System.Windows.Forms.Button unloadBttn;
     }
 }
 

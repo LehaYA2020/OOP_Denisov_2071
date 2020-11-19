@@ -14,6 +14,7 @@ namespace Again_Paint
         int deltaX = 0;
         int deltaY = 0;
         ColorDialog tmpDialog = new ColorDialog();
+        Container c = new Container();
 
         Graphics G;
         public Paint()
@@ -26,8 +27,17 @@ namespace Again_Paint
             G = panel1.CreateGraphics();
         }
 
-
-
+        void fillContainer(object sender, MouseEventArgs e)
+        {
+            foreach (Drawer item in figures)
+            {
+                if (item.IsPointInside(e.X, e.Y) && AddRadioButton.Checked)
+                {
+                    //c.AddToContainer(item);
+                    WeightSumVal.Text = "Y.";
+                }
+            }
+        }
         private void bttnClean_Click(object sender, EventArgs e)
         {
             G.Clear(panel1.BackColor);
@@ -43,9 +53,9 @@ namespace Again_Paint
 
         private void button1_Click(object sender, EventArgs e)
         {
-            draw = new CoalWagon(333,333,60);
-            figures.Add(draw);
-            draw.Draw(G);
+            //draw = new CoalWagon(333,333,60);
+            //figures.Add(draw);
+            //draw.Draw(G);
 
             //WeightSumVal.Text = Convert.ToString(figures.Count);
             //draw = new MyWagon(333, 333, 150);
@@ -128,6 +138,17 @@ namespace Again_Paint
                 draw = new MyTrain(e.X, e.Y, L, length);
                 WeightSumVal.Text = Convert.ToString(draw.WeightSum());
             }
+            if (AddRadioButton.Checked)
+            {
+                foreach (Drawer item in figures)
+                {
+                    if (item.IsPointInside(e.X, e.Y))
+                    {
+                        c.AddToContainer(item);
+                        WeightSumVal.Text = Convert.ToString(c.Count);
+                    }
+                }
+            }
             if (radioButton3.Checked)
             {
             }
@@ -148,6 +169,14 @@ namespace Again_Paint
             panelCir.Visible = false;
             panelRec.Visible = false;
             panelTrain.Visible = true;
+        }
+
+        private void unloadBttn_Click(object sender, EventArgs e)
+        {
+            foreach (Drawer f in c)
+            {
+                f.Draw(G);
+            }
         }
     }
 }
