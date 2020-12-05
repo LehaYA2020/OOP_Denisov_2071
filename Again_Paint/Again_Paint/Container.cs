@@ -11,7 +11,7 @@ namespace Again_Paint
 {
     class Container
     {
-        public delegate void ObjectAddDelegate(Drawer f);
+        public delegate void ObjectAddDelegate();
         public ObjectAddDelegate NotifyDelegate { get; set; }
         public event ObjectAddDelegate NotifyEvent;
         public List<Drawer> cFigures = new List<Drawer>();
@@ -41,7 +41,7 @@ namespace Again_Paint
         public void AddToContainer(Drawer figure) 
         { 
             cFigures.Add(figure);
-            NotifyEvent?.Invoke(figure); 
+            NotifyEvent?.Invoke(); 
         }
         public Drawer GetByIndex(int index) => cFigures[index];
 

@@ -109,7 +109,10 @@ namespace Again_Paint
         {
             foreach (MyWagon item in Wagons)
             {
-                if (item.IsPointInside(Ex, Ey)) { return true; }
+                if (item.IsPointInside(Ex, Ey)) 
+                {
+                    return true; 
+                }
                 return false;
             }
             return false;

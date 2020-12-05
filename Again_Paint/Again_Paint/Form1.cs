@@ -145,7 +145,8 @@ namespace Again_Paint
                     if (item.IsPointInside(e.X, e.Y))
                     {
                         c.AddToContainer(item);
-                        WeightSumVal.Text = Convert.ToString(c.Count);
+                        //WeightSumVal.Text = Convert.ToString(c.Count);
+                        c.NotifyEvent += SomeMessage;
                     }
                 }
             }
@@ -176,7 +177,12 @@ namespace Again_Paint
             foreach (Drawer f in c)
             {
                 f.Draw(G);
+                figures.Add(f);
             }
+        }
+        private void SomeMessage()
+        {
+            WeightSumVal.Text = "Фигур в контейнере:"+Convert.ToString(c.Count);
         }
     }
 }

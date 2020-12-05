@@ -146,9 +146,9 @@
             // 
             // WeightSumVal
             // 
-            this.WeightSumVal.Location = new System.Drawing.Point(550, 416);
+            this.WeightSumVal.Location = new System.Drawing.Point(507, 420);
             this.WeightSumVal.Name = "WeightSumVal";
-            this.WeightSumVal.Size = new System.Drawing.Size(100, 20);
+            this.WeightSumVal.Size = new System.Drawing.Size(143, 20);
             this.WeightSumVal.TabIndex = 12;
             // 
             // label1
