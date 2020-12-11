@@ -97,6 +97,7 @@ namespace calendar
         public void NextDate()
         {
 
+            day++;
 
             if ((year % 4 == 0 && year % 100 != 0) || (year % 4 == 0 && year % 400 == 0))
             {
@@ -113,7 +114,6 @@ namespace calendar
                 day = 1;
                 month++;
             }
-            day++;
 
         }
     }
